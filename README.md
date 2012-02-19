@@ -1,2 +1,2 @@
-# NITHs
+# sNITHs
 ## Utility collection
