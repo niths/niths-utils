@@ -1,2 +1,2 @@
 #!/bin/bash
-ssh ec2-user@ec2-46-137-44-111.eu-west-1.compute.amazonaws.com -i $1
+ssh ec2-46-137-46-84.eu-west-1.compute.amazonaws.com -i $1
