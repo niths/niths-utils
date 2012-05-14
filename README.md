@@ -1,2 +1,3 @@
-# sNITHs
-## Utility collection
+# NITHs utility collection
+
+Includes various utilities for NITHs.

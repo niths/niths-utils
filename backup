@@ -1,0 +1,28 @@
+#!/bin/sh
+
+###############################################################################
+#                                                                             #
+# Script for backing up DB files and cleaning old files                       #
+#  By NITHs                                                                   #
+#                                                                             #
+###############################################################################
+
+NF=`ls backup/ | wc -l`
+MF=20
+
+if [[ NF -gt MF ]]
+then
+  COUNTER=$NF
+  for f in backup/*
+  do
+    if [[ $COUNTER -ge $MF ]]
+    then
+      COUNTER=$((COUNTER-1))
+      echo "NITHs MySQL cleanup - Deleting $f"
+      rm $f
+    fi
+  done
+fi
+
+# Making a backup with a formatted name. E.g. 05-01-12.sql
+mysqldump niths -u root -p123456 > backup/`date +%y-%m-%d`.sql
